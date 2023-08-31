@@ -11,7 +11,7 @@ namespace JituAuth.Entities
         public string Title { get; set; }=string.Empty;
         public string Description { get; set; }=string.Empty;
         public DateTime CreatedDate { get; set;}=DateTime.Now;
-        public DateTime EndtedDate { get; set;}
+        public DateTime EndtedDate { get; set;}=DateTime.Now.AddDays(1);
 
     }
 }

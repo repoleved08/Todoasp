@@ -41,7 +41,10 @@ namespace JituAuth.Controllers
         [HttpPost]
         public ActionResult<TodoSuccess> AddTodo(AddTodo todo)
         {
-
+            var newTodo = _mapper.Map<Todo>(todo);
+            newTodo.Id = Guid.NewGuid();
+            _todos.Add(newTodo);
+            return Ok(new TodoSuccess(201, "Todo succesfully created!"));
         }
 
     }
